@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const seprate = require("./db"); // Ensure this function is correctly defined
 const app = express();
+require("dotenv").config(); // Load environment variables
+
 
 // Initialize Database
 seprate();
