@@ -1,35 +1,41 @@
 const mongoose = require("mongoose");
 
-
-
 const personSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
     },
-    age:{
+    age: {
         type: Number,
     },
-    work:{
+    work: {
         type: String,
-        enum:["cheif", "owner", "waiter"],
+        enum: ["cheif", "owner", "waiter"],
         required: true
     },
-    address:{
+    address: {
         type: String,
-        required:true
+        required: true
     },
-    email:{
+    email: {
         type: String,
-        required:true,
-        unique:true
+        required: true,
+        unique: true
     },
-    salary:{
+    salary: {
         type: Number,
-        required:true
+        required: true
+    },
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
     }
+});
 
-})
-
-const person = mongoose.model('person', personSchema);
-module.exports = person;
+const Person = mongoose.model('Person', personSchema);
+module.exports = Person;
